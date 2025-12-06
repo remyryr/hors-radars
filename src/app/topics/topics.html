@@ -1,0 +1,5 @@
+<div class="cards">
+  @for (topic of topics; track topic.title; let i = $index) {
+    <app-topic-folder-card class="clickable" icon="" [folderTitle]="topic.title" [description]="topic.description" [routerLink]="`/topic/${i}`"></app-topic-folder-card>
+  }
+</div>

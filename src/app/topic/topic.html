@@ -1,0 +1,3 @@
+@for (message of messages; track message.user; let i = $index) {
+  <app-message [ngStyle]="{'background': message.user === 'System' ? 'rgba(255,0,0,0.4)':'auto'}" [subject]="'Sujet : ' + message.subject" [date]="message.date" [user]="message.user" [topicID]="id.toString()" [messageID]="i.toString()"></app-message>
+}

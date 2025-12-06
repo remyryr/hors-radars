@@ -1,0 +1,15 @@
+@if (!logged) {
+  <span class="material-symbols-outlined lock">lock</span>
+  <h1 class="orbitron-black">Veuillez entrer vos identifiants de connexion</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="user">Nom d'utilisateur</label>
+    <input id="user" name="user" required type="email" [(ngModel)]="model.username">
+    <label id="password" for="password">Mot de passe</label>
+    <input name="password" required type="password" [(ngModel)]="model.password">
+    <input name="submit" type="submit">
+  </form>
+} @else {
+  <span class="material-symbols-outlined lock">lock_open_right</span>
+  <h1 class="orbitron-black">Bienvenu chez HORS-RADAR</h1>
+  <span>Vous serez rédigerez dans {{time}} ms</span>
+}

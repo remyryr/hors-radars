@@ -1,0 +1,15 @@
+<div class="left">
+  <span class="material-symbols-outlined">
+    @if(user === 'System') {
+      error
+    } @else {
+      account_circle
+    }
+  </span>
+  <span class="name">{{user}}</span>
+  <span class="date">{{date}}</span>
+</div>
+<div>
+  <h2 class="orbitron-black">{{subject}}</h2>
+  <markdown [src]="`md/${topicID}/${messageID}.md`" (error)="onError($event)"></markdown>
+</div>
