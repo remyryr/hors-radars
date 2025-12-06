@@ -88,6 +88,8 @@ em {
 markdown > p {
   padding: 0.5rem 0 0.5rem 0;
 }
-markdown {
+.markdown-container {
+  min-width: 0;   /* this is the key */
+  flex: 1 1 auto; /* let it take remaining space */
   overflow: hidden; /* optional but recommended */
 }
