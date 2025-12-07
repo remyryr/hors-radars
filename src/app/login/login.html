@@ -8,6 +8,10 @@
     <input name="password" required type="password" [(ngModel)]="model.password">
     <input name="submit" type="submit">
   </form>
+  @if (wrong > 0) {
+    <span class="wrong">Nom d'utilisateur ou mot de passe incorrect !</span>
+    <span class="try">Il ne vous reste plus que {{3-wrong}} tentative</span>
+  }
 } @else {
   <span class="material-symbols-outlined lock">lock_open_right</span>
   <h1 class="orbitron-black">Bienvenue sur HORS-RADARS</h1>

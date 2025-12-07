@@ -50,3 +50,12 @@ h1 {
   padding-bottom: 2rem;
   text-align: center;
 }
+
+.wrong {
+  margin-top: 1rem;
+  color: #a10808;
+}
+.try {
+  color: #830c0c;
+
+}

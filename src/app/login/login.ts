@@ -20,6 +20,7 @@ export class Login {
   cd = inject(ChangeDetectorRef);
   logged: boolean = false
   time = 5000;
+  wrong: number = 0;
   onSubmit() {
     if(this.model.username === "secret-user-04" && this.model.password === "SJ2098"){
       localStorage.setItem('logged', 'true')
@@ -35,6 +36,8 @@ export class Login {
         .subscribe({
           complete: () => this.router.navigate(['/'])
         });
+    } else {
+      this.wrong++;
     }
   }
 }
