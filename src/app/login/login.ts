@@ -21,7 +21,7 @@ export class Login {
   logged: boolean = false
   time = 5000;
   onSubmit() {
-    if(this.model.username === "a" && this.model.password === "a"){
+    if(this.model.username === "secret-user-04" && this.model.password === "SJ2098"){
       localStorage.setItem('logged', 'true')
       this.logged = true
       interval(40)

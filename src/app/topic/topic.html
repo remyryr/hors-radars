@@ -1,3 +1,23 @@
+<h1>{{ title }}</h1>
+<div class="box-blur users">
+  <h2>Snowden est désormais membre de la conversation</h2>
+  <h2>Jenna WHESTLEY est désormais membre de la conversation</h2>
+  <h2>Onil DEVILLE est désormais membre de la conversation</h2>
+</div>
 @for (message of messages; track message.user; let i = $index) {
-  <app-message [ngStyle]="{'background': message.user === 'System' ? 'rgba(255,0,0,0.4)':'auto'}" [subject]="'Sujet : ' + message.subject" [date]="message.date" [user]="message.user" [topicID]="id.toString()" [messageID]="i.toString()"></app-message>
+  @if (testCondition(message.user)) {
+    <div [ngStyle]="{'display' :  ready >= messages.length ? 'flex' : 'none'}" class="box-blur users">
+      <h2>{{ message.subject }} </h2>
+    </div>
+  } @else {
+    <app-message (ready)="newReady()" class="box-blur"
+                 [ngStyle]="{'background': message.user === 'System' ? 'rgba(255,0,0,0.4)': (message.user === 'Tilly' ? 'rgba(0,255,0,0.2)':'auto'),
+               'display' :  ready >= messages.length ? 'flex' : 'none'}"
+                 [subject]="'Sujet : ' + message.subject" [date]="message.date" [user]="message.user"
+                 [topicID]="id.toString()" [messageID]="addMessage().toString()"></app-message>
+  }
+}
+
+@if (ready < messages.length) {
+  <span class="loader"></span>
 }

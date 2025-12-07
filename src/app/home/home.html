@@ -1,3 +1,21 @@
 <div class="topic-folders">
-  <app-topic-folder-card class="clickable" folderTitle="Discussions" icon="chat" description="Ici sont toutes les discussions de ce forum" routerLink="/topics/0"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Toutes les informations importantes de ce forum" folderTitle="Annonces & Règlements"
+                         icon="campaign"
+                         routerLink="/announcement"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Ici sont toutes les discussions de ce forum" folderTitle="Discussions"
+                         icon="chat"
+                         routerLink="/topics/0"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Catégorie dédiée aux événements récents" folderTitle="Actualités"
+                         icon="news"
+                         routerLink="/news"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Zone libre où les utilisateurs parlent de tout et de rien" folderTitle="Hors-sujet"
+                         icon="chat_dashed"
+                         routerLink="/off-topic"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Section accessible uniquement à certains membres" folderTitle="Privée"
+                         icon="encrypted"
+                         routerLink="/private"></app-topic-folder-card>
+  <app-topic-folder-card class="clickable" description="Espace interne réservé à l’équipe du forum" folderTitle="Admin"
+                         icon="admin_panel_settings"
+                         routerLink="/admin"></app-topic-folder-card>
 </div>
+<app-right-bar></app-right-bar>

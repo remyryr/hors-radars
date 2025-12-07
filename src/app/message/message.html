@@ -11,5 +11,5 @@
 </div>
 <div>
   <h2 class="orbitron-black">{{subject}}</h2>
-  <markdown [src]="`md/${topicID}/${messageID}.md`" (error)="onError($event)"></markdown>
+  <markdown (ready)="loaded()" [src]="`md/${topicID}/${messageID}.md`" ></markdown>
 </div>

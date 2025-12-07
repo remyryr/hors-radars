@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output, output} from '@angular/core';
 import {MarkdownComponent} from 'ngx-markdown';
 
 @Component({
@@ -10,14 +10,25 @@ import {MarkdownComponent} from 'ngx-markdown';
   styleUrl: './message.css',
   standalone: true
 })
-export class Message {
+export class Message{
   @Input() date: string = '2 décembre 2093 à 12h58';
   @Input() user: string = 'Anonymous';
   @Input() messageID: string = '0';
   @Input() topicID: string = '0';
   @Input() subject: string = '';
+  @Output() ready = new EventEmitter<null>();
 
-  onError($event: string | Error) {
-    console.log($event)
+  loaded() {
+    const a = document.querySelector('markdown a')
+    if(a && a.id !== "doc") {
+      a.id = "doc";
+      a.setAttribute('target', '_blank');
+      const icon = document.createElement("span")
+      icon.textContent = 'docs'
+      icon.className = "material-symbols-outlined"
+      icon.style.fontSize = "3em"
+      a.insertBefore(icon, a.firstChild)
+    }
+    this.ready.emit()
   }
 }
